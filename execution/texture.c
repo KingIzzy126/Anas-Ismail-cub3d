@@ -6,7 +6,7 @@
 /*   By: ismailalashqar <ismailalashqar@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/13 14:30:00 by ismailalash       #+#    #+#             */
-/*   Updated: 2025/06/13 14:31:05 by ismailalash      ###   ########.fr       */
+/*   Updated: 2025/06/16 20:03:10 by ismailalash      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void    init_draw(t_draw *draw, t_player *player, float start_x)
     draw->prev_y = draw->ray_y;
 }
 
-void    change_name_function(t_draw *draw)
+void    set_wall_texture_direction(t_draw *draw)
 {
     if ((int)(draw->prev_x / WALL) != (int)(draw->ray_x / WALL))
     {

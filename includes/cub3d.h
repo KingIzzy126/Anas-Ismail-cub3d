@@ -6,7 +6,7 @@
 /*   By: ismailalashqar <ismailalashqar@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/12 16:13:59 by ismailalash       #+#    #+#             */
-/*   Updated: 2025/06/16 19:07:33 by ismailalash      ###   ########.fr       */
+/*   Updated: 2025/06/16 19:54:33 by ismailalash      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -182,7 +182,7 @@ void draw_minimap(t_game *game);
 
 // texture.c
 void    init_draw(t_draw *draw, t_player *player, float start_x);
-void    change_name_function(t_draw *draw);
+void    set_wall_texture_direction(t_draw *draw);
 
 // utils.c
 bool sensor(float px, float py, t_game *game);

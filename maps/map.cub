@@ -1,10 +1,10 @@
-NO textures/hexagonwall.xpm
-SO textures/blackhexagon.xpm
-WE textures/spaceship.xpm
-EA textures/spaceshipdark.xpm
+NO textures/blue.xpm
+SO textures/purple.xpm
+WE textures/red.xpm
+EA textures/gold.xpm
 
-F 0,30,50
-C 20,30,30
+F 0,25,45
+C 30,40,70
 
 
 1111111111111111111111111

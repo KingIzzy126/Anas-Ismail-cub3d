@@ -6,7 +6,7 @@
 /*   By: ismailalashqar <ismailalashqar@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 18:04:18 by ismailalash       #+#    #+#             */
-/*   Updated: 2025/06/16 18:10:35 by ismailalash      ###   ########.fr       */
+/*   Updated: 2025/06/16 19:54:54 by ismailalash      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void	draw_lines(t_player *player, t_game *game, float start_x, int i)
 		draw.ray_y += draw.sin_angle;
 	}
 	draw.dist = distance(player->x, player->y, draw.ray_x, draw.ray_y, game);
-    change_name_function(&draw);
+    set_wall_texture_direction(&draw);;
     render_3d(game, i, draw.dist, draw.tex, draw.tex_pos);
 }
 

@@ -6,7 +6,7 @@
 /*   By: ismailalashqar <ismailalashqar@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 18:00:59 by ismailalash       #+#    #+#             */
-/*   Updated: 2025/06/16 19:09:32 by ismailalash      ###   ########.fr       */
+/*   Updated: 2025/06/16 19:48:05 by ismailalash      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,27 +24,6 @@ void init_game(t_game *game, t_info *info)
 	init_player(&game->player, info);
     game->player.game = game;
 }
-
-// char **get_map(void)
-// {
-//     char **map;
-    
-//     map = malloc(sizeof(char *) * 13);
-//     map[0] = "111111111111111111";
-//     map[1] = "100010000000000001";
-//     map[2] = "100010000000010001";
-//     map[3] = "100000000000000001";
-//     map[4] = "100000001110000001";
-//     map[5] = "100000001110000001";
-//     map[6] = "100000001110000001";
-//     map[7] = "100000100000100001";
-//     map[8] = "101000000000000101";
-//     map[9] = "100000100000100001";
-//     map[10] = "100000000000000001";
-//     map[11] = "111111111111111111";
-//     map[12] = NULL;
-//     return (map);
-// }
 
 void load_textures(t_game *game)
 {
