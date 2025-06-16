@@ -6,7 +6,7 @@
 /*   By: ismailalashqar <ismailalashqar@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 18:03:15 by ismailalash       #+#    #+#             */
-/*   Updated: 2025/06/07 13:55:13 by ismailalash      ###   ########.fr       */
+/*   Updated: 2025/06/16 18:10:43 by ismailalash      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ void draw_map(t_game *game)
     int color;
 
     y = 0;
-    map = game->map;
+    map = game->info->map;
     color = 0xFFFFFF;
     while (map[y])
     {

@@ -6,7 +6,7 @@
 /*   By: ismailalashqar <ismailalashqar@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 18:02:20 by ismailalash       #+#    #+#             */
-/*   Updated: 2025/06/16 16:45:45 by ismailalash      ###   ########.fr       */
+/*   Updated: 2025/06/16 18:11:00 by ismailalash      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,11 +29,11 @@ bool sensor(float px, float py, t_game *game)
     x = (int)(px / WALL);
     y = (int)(py / WALL);
     
-    if (x < 0 || y < 0 || !game->map[y]) // Check if point is out of bounds
+    if (x < 0 || y < 0 || !game->info->map[y]) // Check if point is out of bounds
         return (true); // Out of bounds
-    if (x >= (int)ft_strlen(game->map[y])) // Check if x exceeds the row length
+    if (x >= (int)ft_strlen(game->info->map[y])) // Check if x exceeds the row length
         return (true); 
-    return (game->map[y][x] == '1');
+    return (game->info->map[y][x] == '1');
 }
 
 /** * @brief Checks all the 4 player corners if it's colliding with a wall.

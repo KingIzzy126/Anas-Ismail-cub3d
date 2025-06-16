@@ -6,7 +6,7 @@
 /*   By: ismailalashqar <ismailalashqar@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/12 16:13:59 by ismailalash       #+#    #+#             */
-/*   Updated: 2025/06/16 17:12:58 by ismailalash      ###   ########.fr       */
+/*   Updated: 2025/06/16 17:45:47 by ismailalash      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,12 +75,10 @@ typedef struct s_game
     int bpp;
     int size_line;
     int endian;
-    int floor_color;
-    int ceiling_color;
-
-    char **map;
+    
     t_texture textures[4];
     t_player player;
+	struct s_info *info;
 }   t_game;
 
 typedef struct s_draw
@@ -159,8 +157,7 @@ void draw_map(t_game *game);
 void clear_trail(t_game *game);
 
 // init.c
-void init_game(t_game *game);
-char **get_map(void);
+void init_game(t_game *game, t_info *info);
 void load_textures(t_game *game);
 
 // moves.c
@@ -180,7 +177,7 @@ void    move_player(t_player *player);
 int draw_loop(t_game *game);
 void render_3d(t_game *game, int i, float dist, int tex, float tex_pos);
 void draw_lines(t_player *player, t_game *game, float start_x, int i);
-void draw_floor_ceiling(t_game *game, int x, int wall_top, int wall_bottom, int floor_color, int ceiling_color);
+void draw_floor_ceiling(t_game *game, int x, int wall_top, int wall_bottom);
 void draw_minimap(t_game *game);
 
 // texture.c

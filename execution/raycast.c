@@ -6,7 +6,7 @@
 /*   By: ismailalashqar <ismailalashqar@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 18:04:18 by ismailalash       #+#    #+#             */
-/*   Updated: 2025/06/14 19:15:58 by ismailalash      ###   ########.fr       */
+/*   Updated: 2025/06/16 18:10:35 by ismailalash      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ void render_3d(t_game *game, int i, float dist, int tex, float tex_pos)
     render.height = (WALL / dist) * (WIDTH / 2);
     render.start_y = (HEIGHT - render.height) / 2;
     render.end = render.start_y + render.height;
-    draw_floor_ceiling(game, i, render.start_y, render.end, game->floor_color, game->ceiling_color);
+    draw_floor_ceiling(game, i, render.start_y, render.end);
     t = &game->textures[tex];
     render.step = (float)t->height / render.height;
     render.tex_y = 0;
@@ -78,11 +78,19 @@ void render_3d(t_game *game, int i, float dist, int tex, float tex_pos)
  * @param floor_color RGB color of floor.
  * @param ceiling_color RGB color of ceiling.
  */
-void draw_floor_ceiling(t_game *game, int x, int wall_top, int wall_bottom, int floor_color, int ceiling_color)
+void draw_floor_ceiling(t_game *game, int x, int wall_top, int wall_bottom)
 {
     int y;
+    int ceiling_color;
+    int floor_color;
 
     y = 0;
+    ceiling_color = (game->info->ceiling_color.r << 16) |
+                        (game->info->ceiling_color.g << 8) |
+                        (game->info->ceiling_color.b);
+    floor_color = (game->info->floor_color.r << 16) |
+                      (game->info->floor_color.g << 8) |
+                      (game->info->floor_color.b);
     while (y < wall_top)
     {
         put_pixel(x, y, ceiling_color, game);
@@ -108,12 +116,12 @@ void draw_minimap(t_game *game)
     
     tile_size = 8; // size of square on minimap
     y = 0;
-    while (game->map[y])
+    while (game->info->map[y])
     {
         x = 0;
-        while (game->map[y][x])
+        while (game->info->map[y][x])
         {
-            if (game->map[y][x] == '1')
+            if (game->info->map[y][x] == '1')
                 draw_square(x * tile_size, y * tile_size, tile_size, 0xAAAAAA, game);
             x++;
         }
