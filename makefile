@@ -51,11 +51,11 @@ $(NAME): $(OBJS)
 	$(CC) $(CFLAGS) -I$(MLX_DIR) -c $< -o $@
 
 clean:
-	$(MAKE) clean -C $(MLX_DIR)
 	$(RM) $(OBJS)
+	$(RM) main_mandatory.o cub3D_utils.o
+	$(RM) execution/*.o parsing/*.o utils/*.o
 
 fclean: clean
-	$(MAKE) fclean -C $(MLX_DIR)
 	$(RM) $(NAME)
 
 re: fclean all
