@@ -6,7 +6,7 @@
 /*   By: ismailalashqar <ismailalashqar@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 18:00:59 by ismailalash       #+#    #+#             */
-/*   Updated: 2025/06/16 19:48:05 by ismailalash      ###   ########.fr       */
+/*   Updated: 2025/06/17 00:23:37 by ismailalash      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,16 +25,17 @@ void init_game(t_game *game, t_info *info)
     game->player.game = game;
 }
 
-void load_textures(t_game *game)
+void load_wall_textures(t_game *game)
 {
+	int i;
     char *paths[4] = {
         game->info->west_path,
         game->info->east_path,
         game->info->north_path,
-        game->info->south_path
-    };
-
-    int i = 0;
+        game->info->south_path 
+	};
+    
+	i = 0;
     while (i < 4)
     {
         game->textures[i].img = mlx_xpm_file_to_image(game->mlx,
@@ -45,3 +46,28 @@ void load_textures(t_game *game)
     }
 }
 
+void load_visor_textures(t_game *game)
+{
+	int i;
+    char *visor_paths[6] = {
+        "visors/visor.xpm", "visors/visor2.xpm", "visors/visor3.xpm",
+        "visors/visor4.xpm", "visors/visor5.xpm", "visors/visor6.xpm"
+    };
+	
+	i = 0;
+    while (i < 6)
+    {
+        game->visors[i].img = mlx_xpm_file_to_image(game->mlx, visor_paths[i],
+            &game->visors[i].width, &game->visors[i].height);
+        game->visors[i].data = mlx_get_data_addr(game->visors[i].img,
+            &game->visors[i].bpp, &game->visors[i].size_line, &game->visors[i].endian);
+        i++;
+    }
+    game->current_visor = 5; // start with visor6
+}
+
+void load_textures(t_game *game)
+{
+    load_wall_textures(game);
+    load_visor_textures(game);
+}

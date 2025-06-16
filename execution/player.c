@@ -6,7 +6,7 @@
 /*   By: ismailalashqar <ismailalashqar@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/14 14:41:06 by ismailalash       #+#    #+#             */
-/*   Updated: 2025/06/16 19:17:37 by ismailalash      ###   ########.fr       */
+/*   Updated: 2025/06/17 00:18:20 by ismailalash      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ void	init_player(t_player *player, t_info *info)
 
 int	key_press(int keycode, t_player *player)
 {
+	int visor_index;
 	if (keycode == W)
 		player->key_up = true;
 	if (keycode == S)
@@ -48,6 +49,12 @@ int	key_press(int keycode, t_player *player)
 		player->right_rotate = true;
 	if (keycode == ESC)
 		close_window(player->game);
+	if (keycode >= 18 && keycode <= 23) // Keys 1–6
+	{
+		visor_index = keycode - 18;
+		if (visor_index >= 0 && visor_index < 6)
+			player->game->current_visor = visor_index;
+	}
 	return (0);
 }
 

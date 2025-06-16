@@ -6,14 +6,14 @@
 /*   By: ismailalashqar <ismailalashqar@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/12 16:13:59 by ismailalash       #+#    #+#             */
-/*   Updated: 2025/06/16 19:54:33 by ismailalash      ###   ########.fr       */
+/*   Updated: 2025/06/17 00:19:35 by ismailalash      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GAME_H
 #define GAME_H
 
-# define WIDTH 750
+# define WIDTH 1000
 # define HEIGHT 700
 # define WALL 40
 # define MINIMAP_SCALE 0.2
@@ -75,8 +75,10 @@ typedef struct s_game
     int bpp;
     int size_line;
     int endian;
+	int current_visor;
     
     t_texture textures[4];
+	t_texture visors[6];
     t_player player;
 	struct s_info *info;
 }   t_game;
@@ -158,6 +160,8 @@ void clear_trail(t_game *game);
 
 // init.c
 void init_game(t_game *game, t_info *info);
+void load_wall_textures(t_game *game);
+void load_visor_textures(t_game *game);
 void load_textures(t_game *game);
 
 // moves.c
@@ -183,6 +187,8 @@ void draw_minimap(t_game *game);
 // texture.c
 void    init_draw(t_draw *draw, t_player *player, float start_x);
 void    set_wall_texture_direction(t_draw *draw);
+int get_visor_color(t_texture *t, int x, int y, float scale_x, float scale_y);
+void draw_visor_overlay(t_game *game);;
 
 // utils.c
 bool sensor(float px, float py, t_game *game);

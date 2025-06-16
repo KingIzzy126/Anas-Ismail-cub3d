@@ -6,7 +6,7 @@
 /*   By: ismailalashqar <ismailalashqar@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 18:04:18 by ismailalash       #+#    #+#             */
-/*   Updated: 2025/06/16 19:54:54 by ismailalash      ###   ########.fr       */
+/*   Updated: 2025/06/16 23:39:04 by ismailalash      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,8 @@ void render_3d(t_game *game, int i, float dist, int tex, float tex_pos)
 {
     t_render render;
     t_texture *t;
+    int ty;
+    int index;
 
     render.height = (WALL / dist) * (WIDTH / 2);
     render.start_y = (HEIGHT - render.height) / 2;
@@ -58,8 +60,8 @@ void render_3d(t_game *game, int i, float dist, int tex, float tex_pos)
     render.tex_x = (int)(tex_pos * t->width);
     while (render.start_y < render.end)
     {
-        int ty = (int)render.tex_y;
-        int index = ty * t->size_line + render.tex_x * (t->bpp / 8);
+        ty = (int)render.tex_y;
+        index = ty * t->size_line + render.tex_x * (t->bpp / 8);
         render.color = (unsigned char)t->data[index] |
                 ((unsigned char)t->data[index + 1] << 8) |
                 ((unsigned char)t->data[index + 2] << 16);
@@ -161,6 +163,7 @@ int draw_loop(t_game *game)
         start_x += fraction;
         i++;
     }
+    draw_visor_overlay(game);
     draw_minimap(game);
     mlx_put_image_to_window(game->mlx, game->win, game->img, 0, 0);
     return (0);
