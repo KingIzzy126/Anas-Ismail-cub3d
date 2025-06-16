@@ -6,17 +6,24 @@
 /*   By: ismailalashqar <ismailalashqar@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/14 14:41:06 by ismailalash       #+#    #+#             */
-/*   Updated: 2025/06/07 20:15:43 by ismailalash      ###   ########.fr       */
+/*   Updated: 2025/06/16 19:17:37 by ismailalash      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/cub3d.h"
 
-void	init_player(t_player *player)
+void	init_player(t_player *player, t_info *info)
 {
-	player->x = WIDTH / 2;
-	player->y = HEIGHT / 2;
-	player->angle = PI / 2;
+	player->x = (info->x_plr + 0.5) * WALL;
+	player->y = (info->y_plr + 0.5) * WALL;
+	if (info->facing_plr == 'N') 
+		player->angle = PI / 2;
+	else if (info->facing_plr == 'S') 
+		player->angle = 3 * PI / 2;
+	else if (info->facing_plr == 'E') 
+		player->angle = 0;
+	else if (info->facing_plr == 'W') 
+		player->angle = PI;
 	player->key_up = false;
 	player->key_down = false;
 	player->key_left = false;
@@ -70,10 +77,10 @@ void	rotate_player(t_player *player)
 		player->angle -= angle_speed;
 	if (player->right_rotate)
 		player->angle += angle_speed;
-	if (player->angle > 2 * PI)
-		player->angle = 0;
 	if (player->angle < 0)
-		player->angle = 2 * PI;
+		player->angle += 2 * PI;
+	else if (player->angle >= 2 * PI)
+		player->angle -= 2 * PI;
 }
 
 void	move_player(t_player *player)

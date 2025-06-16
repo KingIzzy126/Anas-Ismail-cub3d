@@ -6,7 +6,7 @@
 /*   By: ismailalashqar <ismailalashqar@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/12 16:13:59 by ismailalash       #+#    #+#             */
-/*   Updated: 2025/06/16 17:45:47 by ismailalash      ###   ########.fr       */
+/*   Updated: 2025/06/16 19:07:33 by ismailalash      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -167,7 +167,7 @@ void	move_left(t_player *player, int speed, float cos_a, float sin_a);
 void	move_right(t_player *player, int speed, float cos_a, float sin_a);
 
 // player.c
-void	init_player(t_player *player);
+void	init_player(t_player *player, t_info *info);
 int     key_press(int keycode, t_player *player);
 int     key_release(int keycode, t_player *player);
 void	rotate_player(t_player *player);

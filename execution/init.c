@@ -6,7 +6,7 @@
 /*   By: ismailalashqar <ismailalashqar@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 18:00:59 by ismailalash       #+#    #+#             */
-/*   Updated: 2025/06/16 18:31:47 by ismailalash      ###   ########.fr       */
+/*   Updated: 2025/06/16 19:09:32 by ismailalash      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void init_game(t_game *game, t_info *info)
     game->data = mlx_get_data_addr(game->img, &game->bpp, &game->size_line, &game->endian); 
     mlx_put_image_to_window(game->mlx, game->win, game->img, 0, 0);
     load_textures(game);
-    init_player(&game->player);
+	init_player(&game->player, info);
     game->player.game = game;
 }
 
