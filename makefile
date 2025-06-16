@@ -5,7 +5,8 @@ CFLAGS = -Wall -Wextra -Werror
 RM = rm -f
 
 MLX_DIR = ./mlx
-MLX_FLAGS = -L$(MLX_DIR) -lmlx -framework OpenGL -framework AppKit
+MLX_FLAGS = -L$(MLX_DIR) -lmlx -lXext -lX11 -lm -lXrandr -lXrender -lXfixes -lXcursor -lXinerama -lXcomposite -lXdamage -lXdmcp -lXt -lGL -lbsd
+
 
 SRCS = \
 	execution/draw.c \
@@ -48,7 +49,7 @@ $(NAME): $(OBJS)
 	$(CC) $(CFLAGS) $(OBJS) $(MLX_FLAGS) -o $(NAME)
 
 %.o: %.c
-	$(CC) $(CFLAGS) -I$(MLX_DIR) -c $< -o $@
+	$(CC) $(CFLAGS) -I$(MLX_DIR) -I/usr/include -I/usr/include/X11 -c $< -o $@
 
 clean:
 	$(RM) $(OBJS)
