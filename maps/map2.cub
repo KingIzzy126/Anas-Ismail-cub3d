@@ -1,13 +1,7 @@
-SO  r
-NO ./path_to_the_north_texture
-
-
-WE f t ttt t t  t tt  tt  t t t
-
-
-
-
-EA ./path_to_the_east_texture
+NO textures/hexagonwall.xpm
+SO textures/blackhexagon.xpm
+WE textures/spaceship.xpm
+EA textures/spaceshipdark.xpm
 
 
 
@@ -44,7 +38,7 @@ F       1                         ,           1          ,      100
 11111111111111111111111111     1
 111111111111111111111111111    11
 111111111111111111111111111111111
-1111111111111111111111111111101111
+11111111111111111111111111111011111
 111111111111th1111111111111111111101
 11111111111111111111111111111111111
 11111111111111111111111111

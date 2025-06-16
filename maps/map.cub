@@ -3,8 +3,9 @@ SO textures/blackhexagon.xpm
 WE textures/spaceship.xpm
 EA textures/spaceshipdark.xpm
 
-F 220,100,0
-C 225,30,0
+F 0,30,50
+C 20,30,30
+
 
 1111111111111111111111111
 1000000000110000000000001
