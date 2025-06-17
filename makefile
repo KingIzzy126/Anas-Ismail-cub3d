@@ -15,14 +15,14 @@ SRCS = \
 	execution/raycast.c \
 	execution/texture.c \
 	execution/utils.c \
-	parsing/map_parsing.c \
-	parsing/check_allowed_player_zero.c \
-	parsing/path_identifier.c \
-	parsing/check_valid_comma_colors.c \
-	parsing/map_parsing_utils.c \
-	parsing/header_parsing.c \
-	parsing/color_value.c \
-	parsing/check_allowed_spaces.c \
+	parsings/map_parsing.c \
+	parsings/check_allowed_player_zero.c \
+	parsings/path_identifier.c \
+	parsings/check_valid_comma_colors.c \
+	parsings/map_parsing_utils.c \
+	parsings/header_parsing.c \
+	parsings/color_value.c \
+	parsings/check_allowed_spaces.c \
 	utils/ft_atoi_modified.c \
 	utils/ft_split.c \
 	utils/get_next_line.c \
