@@ -6,7 +6,7 @@
 /*   By: ismailalashqar <ismailalashqar@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/12 16:13:59 by ismailalash       #+#    #+#             */
-/*   Updated: 2025/06/17 00:19:35 by ismailalash      ###   ########.fr       */
+/*   Updated: 2025/06/17 15:52:17 by ismailalash      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ typedef struct s_game
 	int current_visor;
     
     t_texture textures[4];
-	t_texture visors[6];
+	t_texture visors[7];
     t_player player;
 	struct s_info *info;
 }   t_game;

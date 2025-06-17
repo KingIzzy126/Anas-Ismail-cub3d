@@ -6,7 +6,7 @@
 /*   By: ismailalashqar <ismailalashqar@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/13 14:30:00 by ismailalash       #+#    #+#             */
-/*   Updated: 2025/06/17 00:17:00 by ismailalash      ###   ########.fr       */
+/*   Updated: 2025/06/17 15:56:46 by ismailalash      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,10 +64,11 @@ void draw_visor_overlay(t_game *game)
     int color;
     t_texture *t;
     
+    if (game->current_visor == 0)
+		return;
     t = &game->visors[game->current_visor];
     float scale_x;  
     float scale_y; 
-
     scale_x = (float)t->width / WIDTH;  // Horizontal scaling factor
     scale_y = (float)t->height / HEIGHT; // Vertical scaling factor
     y = 0;

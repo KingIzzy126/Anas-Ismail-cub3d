@@ -57,6 +57,7 @@ clean:
 
 fclean: clean
 	$(RM) $(NAME)
+	$(MAKE) -C $(MLX_DIR) clean
 
 re: fclean all
 
