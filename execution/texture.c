@@ -6,7 +6,7 @@
 /*   By: ismailalashqar <ismailalashqar@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/13 14:30:00 by ismailalash       #+#    #+#             */
-/*   Updated: 2025/06/17 15:56:46 by ismailalash      ###   ########.fr       */
+/*   Updated: 2025/06/18 00:40:03 by ismailalash      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,4 +84,32 @@ void draw_visor_overlay(t_game *game)
         }
         y++;
     }
+}
+
+void draw_crosshair(t_game *game)
+{
+	int mid_x;
+	int mid_y;
+	int length;
+	int color;
+	int i;
+
+	mid_x = WIDTH / 2;
+	mid_y = HEIGHT / 2;
+	length = 10;
+	color = 0xFF0000; // Red
+
+	i = -length;
+	while (i <= length)
+	{
+		put_pixel(mid_x + i, mid_y, color, game);
+		i++;
+	}
+	// Vertical line
+	i = -length;
+	while (i <= length)
+	{
+		put_pixel(mid_x, mid_y + i, color, game);
+		i++;
+	}
 }

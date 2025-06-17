@@ -13,6 +13,7 @@ SRCS = \
 	execution/moves.c \
 	execution/player.c \
 	execution/raycast.c \
+	execution/rifle.c \
 	execution/texture.c \
 	execution/utils.c \
 	parsing/map_parsing.c \

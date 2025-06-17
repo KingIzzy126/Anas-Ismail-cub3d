@@ -6,7 +6,7 @@
 /*   By: ismailalashqar <ismailalashqar@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/14 14:41:06 by ismailalash       #+#    #+#             */
-/*   Updated: 2025/06/17 15:56:13 by ismailalash      ###   ########.fr       */
+/*   Updated: 2025/06/17 20:09:20 by ismailalash      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,8 @@ int	key_press(int keycode, t_player *player)
 		player->left_rotate = true;
 	if (keycode == RIGHT)
 		player->right_rotate = true;
+	if (keycode == SPACE)
+		player->game->is_shooting = true;
 	if (keycode == ESC)
 		close_window(player->game);
     if (keycode >= 18 && keycode <= 23) // Keys 1–6
@@ -69,6 +71,8 @@ int	key_release(int keycode, t_player *player)
 		player->left_rotate = false;
 	if (keycode == RIGHT)
 		player->right_rotate = false;
+	if (keycode == SPACE)
+		player->game->is_shooting = false;
 	return (0);
 }
 

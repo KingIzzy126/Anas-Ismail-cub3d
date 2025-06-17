@@ -6,7 +6,7 @@
 /*   By: ismailalashqar <ismailalashqar@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/12 16:13:59 by ismailalash       #+#    #+#             */
-/*   Updated: 2025/06/17 15:52:17 by ismailalash      ###   ########.fr       */
+/*   Updated: 2025/06/18 00:41:10 by ismailalash      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@
 # define ESC 53
 # define LEFT 123
 # define RIGHT 124
+# define SPACE 49
 
 # define PI 3.14159265358979323846
 
@@ -76,7 +77,11 @@ typedef struct s_game
     int size_line;
     int endian;
 	int current_visor;
+	int shooting_frame;
+	bool is_shooting;
     
+	t_texture gun_normal;
+	t_texture gun_shoot;
     t_texture textures[4];
 	t_texture visors[7];
     t_player player;
@@ -95,6 +100,16 @@ typedef struct s_draw
     int     tex;
     float   tex_pos;
 } t_draw;
+
+typedef struct s_gun_render
+{
+    int x;
+    int y;
+    float scale_x;
+    float scale_y;
+    int target_w;
+    int target_h;
+} t_gun_render;
 
 typedef struct s_render
 {
@@ -162,6 +177,7 @@ void clear_trail(t_game *game);
 void init_game(t_game *game, t_info *info);
 void load_wall_textures(t_game *game);
 void load_visor_textures(t_game *game);
+void load_gun_textures(t_game *game);
 void load_textures(t_game *game);
 
 // moves.c
@@ -184,11 +200,19 @@ void draw_lines(t_player *player, t_game *game, float start_x, int i);
 void draw_floor_ceiling(t_game *game, int x, int wall_top, int wall_bottom);
 void draw_minimap(t_game *game);
 
+// rifle.c
+void toggle_gun_animation(t_game *game);
+t_texture *get_gun_texture(t_game *game);
+void initialize_gun_render(t_gun_render *render, t_texture *gun);
+void render_gun(t_game *game, t_texture *gun, t_gun_render *render);
+void draw_gun(t_game *game);
+
 // texture.c
 void    init_draw(t_draw *draw, t_player *player, float start_x);
 void    set_wall_texture_direction(t_draw *draw);
 int get_visor_color(t_texture *t, int x, int y, float scale_x, float scale_y);
-void draw_visor_overlay(t_game *game);;
+void draw_visor_overlay(t_game *game);
+void draw_crosshair(t_game *game);
 
 // utils.c
 bool sensor(float px, float py, t_game *game);

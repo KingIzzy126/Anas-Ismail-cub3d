@@ -6,7 +6,7 @@
 /*   By: ismailalashqar <ismailalashqar@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 18:04:18 by ismailalash       #+#    #+#             */
-/*   Updated: 2025/06/17 16:01:51 by ismailalash      ###   ########.fr       */
+/*   Updated: 2025/06/18 00:41:44 by ismailalash      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -163,8 +163,11 @@ int draw_loop(t_game *game)
         start_x += fraction;
         i++;
     }
+    toggle_gun_animation(game); 
     draw_visor_overlay(game);
+    draw_gun(game);
     draw_minimap(game);
+    draw_crosshair(game);
     mlx_put_image_to_window(game->mlx, game->win, game->img, 0, 0);
     return (0);
 }
