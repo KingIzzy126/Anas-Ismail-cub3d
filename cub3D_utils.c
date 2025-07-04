@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   cub3D_utils.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ismailalashqar <ismailalashqar@student.    +#+  +:+       +#+        */
+/*   By: ialashqa <ialashqa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/16 16:39:44 by aal-hawa          #+#    #+#             */
-/*   Updated: 2025/06/16 16:55:48 by ismailalash      ###   ########.fr       */
+/*   Updated: 2025/07/04 12:49:11 by ialashqa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/cub3d.h"
+#include "cub3d.h"
 
 void	exitmassege(char *error, t_info *info)
 {

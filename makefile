@@ -1,11 +1,21 @@
 NAME = cub3D
 
 CC = cc
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -I./includes
 RM = rm -f
 
-MLX_DIR = ./mlx
-MLX_FLAGS = -L$(MLX_DIR) -lmlx -framework OpenGL -framework AppKit
+UNAME := $(shell uname)
+
+ifeq ($(UNAME), Linux)
+  LIBX_DIR	+=  minilibx/linux
+  MLX_FLAGS	:=  -lXext -lX11
+  CPPFLAGS	+=  -D LINUX -Wno-unused-result
+else ifeq ($(UNAME), Darwin)
+  LIBX_DIR	+=  minilibx/opengl
+  MLX_FLAGS	+=  -Lminilibx/opengl -lmlx
+  MLX_FLAGS	:=  -framework OpenGL -framework Appkit
+  CPPFLAGS	+=  -DSTRINGPUTX11
+endif
 
 SRCS = \
 	execution/draw.c \
@@ -43,13 +53,14 @@ OBJS = $(SRCS:.c=.o)
 all: mlx_compiled $(NAME)
 
 mlx_compiled:
-	$(MAKE) -C $(MLX_DIR)
+	@echo "Compiling MiniLibX in: ${LIBX_DIR}"
+	@$(MAKE) -C $(LIBX_DIR)
 
 $(NAME): $(OBJS)
-	$(CC) $(CFLAGS) $(OBJS) $(MLX_FLAGS) -o $(NAME)
+	$(CC) $(CFLAGS) $(OBJS) -L$(LIBX_DIR) -lmlx $(MLX_FLAGS) -o $(NAME)
 
 %.o: %.c
-	$(CC) $(CFLAGS) -I$(MLX_DIR) -c $< -o $@
+	$(CC) $(CFLAGS) -I$(LIBX_DIR) -c $< -o $@
 	
 clean:
 	$(RM) $(OBJS)
@@ -58,7 +69,7 @@ clean:
 
 fclean: clean
 	$(RM) $(NAME)
-	$(MAKE) -C $(MLX_DIR) clean
+	$(MAKE) -C $(LIBX_DIR) clean
 
 re: fclean all
 

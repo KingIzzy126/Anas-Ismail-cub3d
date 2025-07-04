@@ -6,11 +6,11 @@
 /*   By: ialashqa <ialashqa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 17:22:48 by aal-hawa          #+#    #+#             */
-/*   Updated: 2025/07/01 19:21:55 by ialashqa         ###   ########.fr       */
+/*   Updated: 2025/07/04 12:48:40 by ialashqa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/cub3d.h"
+#include "cub3d.h"
 
 int	main(int ac, char **arg)
 {
@@ -19,7 +19,7 @@ int	main(int ac, char **arg)
 	int		fd;
 
 	// Step 1: Init and parse map
-	init_info(&info);
+	init_info(&info);    
 	if (ac != 2)
 		exitmassege("You Must Have One Map (chose_name.ber)\n", &info);
 	fd = open_map_fd(arg[1], &info);

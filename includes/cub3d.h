@@ -6,7 +6,7 @@
 /*   By: ialashqa <ialashqa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/12 16:13:59 by ismailalash       #+#    #+#             */
-/*   Updated: 2025/07/04 11:49:08 by ialashqa         ###   ########.fr       */
+/*   Updated: 2025/07/04 12:39:45 by ialashqa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,8 @@
 
 # define PI 3.14159265358979323846
 
-# include "../mlx/mlx.h"
+# include "../minilibx/opengl/mlx.h"
+# include "../minilibx/linux/mlx.h"
 # include <fcntl.h>
 # include <math.h>
 # include <stdbool.h>
