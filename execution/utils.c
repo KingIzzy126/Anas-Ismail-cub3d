@@ -6,7 +6,7 @@
 /*   By: ialashqa <ialashqa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 18:02:20 by ismailalash       #+#    #+#             */
-/*   Updated: 2025/07/04 11:40:33 by ialashqa         ###   ########.fr       */
+/*   Updated: 2025/07/04 15:08:15 by ialashqa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,8 +72,29 @@ float	distance(t_points *p, t_game *game)
 
 int	close_window(t_game *game)
 {
+	int i;
+	
+	i = 0;
+	while (i < 4)
+	{
+		if (game->textures[i].img)
+			mlx_destroy_image(game->mlx, game->textures[i].img);
+		i++;
+	}
+	i = 1;
+	while (i <= 5)
+	{
+		if (game->visors[i].img)
+			mlx_destroy_image(game->mlx, game->visors[i].img);
+		i++;
+	}
+	if (game->gun_normal.img)
+		mlx_destroy_image(game->mlx, game->gun_normal.img);
+	if (game->gun_shoot.img)
+		mlx_destroy_image(game->mlx, game->gun_shoot.img);
 	mlx_destroy_image(game->mlx, game->img);
 	mlx_destroy_window(game->mlx, game->win);
+	free_info(game->info);
 	exit(EXIT_SUCCESS);
 }
 
