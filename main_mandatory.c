@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main_mandatory.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ismailalashqar <ismailalashqar@student.    +#+  +:+       +#+        */
+/*   By: ialashqa <ialashqa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 17:22:48 by aal-hawa          #+#    #+#             */
-/*   Updated: 2025/06/16 18:15:38 by ismailalash      ###   ########.fr       */
+/*   Updated: 2025/07/01 19:21:55 by ialashqa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ int	main(int ac, char **arg)
 	mlx_hook(game.win, 17, 1L << 17, close_window, &game);
 	mlx_loop_hook(game.mlx, draw_loop, &game);
 	mlx_loop(game.mlx);
-	free_info(&info);
+	// free_info(&info);
 	return (0);
 }
+

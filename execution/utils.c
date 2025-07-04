@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ismailalashqar <ismailalashqar@student.    +#+  +:+       +#+        */
+/*   By: ialashqa <ialashqa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 18:02:20 by ismailalash       #+#    #+#             */
-/*   Updated: 2025/06/16 18:11:00 by ismailalash      ###   ########.fr       */
+/*   Updated: 2025/07/04 11:40:33 by ialashqa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,19 +21,18 @@
  * @return true If the point is inside a wall or out of bounds.
  * @return false If the point is valid and not inside a wall.
  */
-bool sensor(float px, float py, t_game *game)
+bool	sensor(float px, float py, t_game *game)
 {
-    int x;
-    int y;
+	int	x;
+	int	y;
 
-    x = (int)(px / WALL);
-    y = (int)(py / WALL);
-    
-    if (x < 0 || y < 0 || !game->info->map[y]) // Check if point is out of bounds
-        return (true); // Out of bounds
-    if (x >= (int)ft_strlen(game->info->map[y])) // Check if x exceeds the row length
-        return (true); 
-    return (game->info->map[y][x] == '1');
+	x = (int)(px / WALL);
+	y = (int)(py / WALL);
+	if (x < 0 || y < 0 || !game->info->map[y])
+		return (true);
+	if (x >= (int)ft_strlen(game->info->map[y]))
+		return (true);
+	return (game->info->map[y][x] == '1');
 }
 
 /** * @brief Checks all the 4 player corners if it's colliding with a wall.
@@ -44,34 +43,34 @@ bool sensor(float px, float py, t_game *game)
  * @return true if collision detected, false no collision.
  */
 
-bool is_colliding(float x, float y, t_game *game, float player_size)
+bool	is_colliding(float x, float y, t_game *game, float player_size)
 {
-    if (sensor(x - player_size, y - player_size, game)) // Top-left
-        return true; 
-    if (sensor(x + player_size, y - player_size, game)) // Top-right
-        return true;
-    if (sensor(x - player_size, y + player_size, game)) // Bottom-left
-        return true;
-    if (sensor(x + player_size, y + player_size, game)) // Bottom-right
-        return true;
-    return false;
+	if (sensor(x - player_size, y - player_size, game))
+		return (true);
+	if (sensor(x + player_size, y - player_size, game))
+		return (true);
+	if (sensor(x - player_size, y + player_size, game))
+		return (true);
+	if (sensor(x + player_size, y + player_size, game))
+		return (true);
+	return (false);
 }
 
-float distance(float x1, float y1, float x2, float y2, t_game *game)
+float	distance(t_points *p, t_game *game)
 {
-    float delta_x;
-    float delta_y;
-    float angle;
-    float fix_dist;
+	float	delta_x;
+	float	delta_y;
+	float	angle;
+	float	fix_dist;
 
-    delta_x = x2 - x1;
-    delta_y = y2 - y1;
-    angle = atan2(delta_y, delta_x) - game->player.angle;
-    fix_dist = sqrt(delta_x * delta_x + delta_y * delta_y) * cos(angle);
-    return (fix_dist);
+	delta_x = p->x2 - p->x1;
+	delta_y = p->y2 - p->y1;
+	angle = atan2(delta_y, delta_x) - game->player.angle;
+	fix_dist = sqrt(delta_x * delta_x + delta_y * delta_y) * cos(angle);
+	return (fix_dist);
 }
 
-int	close_window(t_game *game) // Close window
+int	close_window(t_game *game)
 {
 	mlx_destroy_image(game->mlx, game->img);
 	mlx_destroy_window(game->mlx, game->win);

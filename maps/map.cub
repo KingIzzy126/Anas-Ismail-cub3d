@@ -1,11 +1,10 @@
-NO textures/walls/blue.xpm
 SO textures/walls/purple.xpm
 WE textures/walls/red.xpm
+NO textures/walls/blue.xpm
 EA textures/walls/gold.xpm
 
 F 0,25,45
 C 30,40,70
-
 
 1111111111111111111111111
 1000000000110000000000001

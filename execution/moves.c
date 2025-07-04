@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   moves.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ismailalashqar <ismailalashqar@student.    +#+  +:+       +#+        */
+/*   By: ialashqa <ialashqa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/07 19:53:43 by ismailalash       #+#    #+#             */
-/*   Updated: 2025/06/11 13:08:01 by ismailalash      ###   ########.fr       */
+/*   Updated: 2025/07/02 11:37:25 by ialashqa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 void	move_up(t_player *player, int speed, float cos_a, float sin_a)
 {
-	float new_x;
-	float new_y;
-	float player_size;
+	float	new_x;
+	float	new_y;
+	float	player_size;
 
 	player_size = COLLISION_BUFFER;
 	if (player->key_up)
@@ -32,9 +32,9 @@ void	move_up(t_player *player, int speed, float cos_a, float sin_a)
 
 void	move_down(t_player *player, int speed, float cos_a, float sin_a)
 {
-	float new_x;
-	float new_y;
-	float player_size;
+	float	new_x;
+	float	new_y;
+	float	player_size;
 
 	player_size = COLLISION_BUFFER;
 	if (player->key_down)
@@ -50,9 +50,9 @@ void	move_down(t_player *player, int speed, float cos_a, float sin_a)
 
 void	move_left(t_player *player, int speed, float cos_a, float sin_a)
 {
-	float new_x;
-	float new_y;
-	float player_size;
+	float	new_x;
+	float	new_y;
+	float	player_size;
 
 	player_size = COLLISION_BUFFER;
 	if (player->key_left)
@@ -68,9 +68,9 @@ void	move_left(t_player *player, int speed, float cos_a, float sin_a)
 
 void	move_right(t_player *player, int speed, float cos_a, float sin_a)
 {
-	float new_x;
-	float new_y;
-	float player_size;
+	float	new_x;
+	float	new_y;
+	float	player_size;
 
 	player_size = COLLISION_BUFFER;
 	if (player->key_right)

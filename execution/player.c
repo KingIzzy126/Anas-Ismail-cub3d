@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   player.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ismailalashqar <ismailalashqar@student.    +#+  +:+       +#+        */
+/*   By: ialashqa <ialashqa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/14 14:41:06 by ismailalash       #+#    #+#             */
-/*   Updated: 2025/06/17 20:09:20 by ismailalash      ###   ########.fr       */
+/*   Updated: 2025/07/02 11:38:00 by ialashqa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,13 @@ void	init_player(t_player *player, t_info *info)
 {
 	player->x = (info->x_plr + 0.5) * WALL;
 	player->y = (info->y_plr + 0.5) * WALL;
-	if (info->facing_plr == 'N') 
+	if (info->facing_plr == 'N')
 		player->angle = PI / 2;
-	else if (info->facing_plr == 'S') 
+	else if (info->facing_plr == 'S')
 		player->angle = 3 * PI / 2;
-	else if (info->facing_plr == 'E') 
+	else if (info->facing_plr == 'E')
 		player->angle = 0;
-	else if (info->facing_plr == 'W') 
+	else if (info->facing_plr == 'W')
 		player->angle = PI;
 	player->key_up = false;
 	player->key_down = false;
@@ -50,10 +50,12 @@ int	key_press(int keycode, t_player *player)
 		player->game->is_shooting = true;
 	if (keycode == ESC)
 		close_window(player->game);
-    if (keycode >= 18 && keycode <= 23) // Keys 1–6
-        player->game->current_visor = keycode - 17;
-    if (keycode == 29) // key 0
-        player->game->current_visor = 0;
+	if (keycode >= 18 && keycode <= 21)
+		player->game->current_visor = keycode - 17;
+	if (keycode == 23)
+		player->game->current_visor = 5;
+	if (keycode == 29)
+		player->game->current_visor = 0;
 	return (0);
 }
 
