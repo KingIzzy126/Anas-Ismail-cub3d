@@ -6,7 +6,7 @@
 /*   By: ialashqa <ialashqa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/12 16:13:59 by ismailalash       #+#    #+#             */
-/*   Updated: 2025/07/04 12:39:45 by ialashqa         ###   ########.fr       */
+/*   Updated: 2025/07/04 17:13:22 by ialashqa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@
 # define LEFT 123
 # define RIGHT 124
 # define SPACE 49
+# define TRIGGER 1
 
 # define PI 3.14159265358979323846
 
@@ -206,6 +207,10 @@ void					load_visor_textures(t_game *game);
 void					load_gun_textures(t_game *game);
 void					load_textures(t_game *game);
 
+// mouse.c
+int						mouse_press(int button, int x, int y, t_game *game);
+int						mouse_release(int button, int x, int y, t_game *game);
+
 // moves.c
 void					move_up(t_player *player, int speed, float cos_a,
 							float sin_a);
@@ -215,6 +220,7 @@ void					move_left(t_player *player, int speed, float cos_a,
 							float sin_a);
 void					move_right(t_player *player, int speed, float cos_a,
 							float sin_a);
+void					rotate_with_mouse(t_player *player, t_game *game);
 
 // player.c
 void					init_player(t_player *player, t_info *info);

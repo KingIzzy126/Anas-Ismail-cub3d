@@ -6,7 +6,7 @@
 /*   By: ialashqa <ialashqa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 18:04:18 by ismailalash       #+#    #+#             */
-/*   Updated: 2025/07/04 14:41:18 by ialashqa         ###   ########.fr       */
+/*   Updated: 2025/07/04 16:39:22 by ialashqa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -136,6 +136,7 @@ int	draw_loop(t_game *game)
 	t_player	*player;
 
 	player = &game->player;
+	rotate_with_mouse(player, game);
 	move_player(player);
 	clear_trail(game);
 	fraction = PI / 3 / WIDTH;

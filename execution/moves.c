@@ -6,7 +6,7 @@
 /*   By: ialashqa <ialashqa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/07 19:53:43 by ismailalash       #+#    #+#             */
-/*   Updated: 2025/07/02 11:37:25 by ialashqa         ###   ########.fr       */
+/*   Updated: 2025/07/04 17:12:57 by ialashqa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,4 +82,20 @@ void	move_right(t_player *player, int speed, float cos_a, float sin_a)
 		if (!is_colliding(player->x, new_y, player->game, player_size))
 			player->y = new_y;
 	}
+}
+
+void	rotate_with_mouse(t_player *player, t_game *game)
+{
+	int		mouse_x;
+	int		mouse_y;
+	float	rotation_speed;
+
+	rotation_speed = 0.002;
+	mlx_mouse_get_pos(game->win, &mouse_x, &mouse_y);
+	mlx_mouse_move(game->win, WIDTH / 2, HEIGHT / 2);
+	player->angle += (mouse_x - WIDTH / 2) * rotation_speed;
+	if (player->angle < 0)
+		player->angle += 2 * PI;
+	if (player->angle > 2 * PI)
+		player->angle -= 2 * PI;
 }

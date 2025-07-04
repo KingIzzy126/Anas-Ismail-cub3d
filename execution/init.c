@@ -6,7 +6,7 @@
 /*   By: ialashqa <ialashqa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 18:00:59 by ismailalash       #+#    #+#             */
-/*   Updated: 2025/07/02 11:36:29 by ialashqa         ###   ########.fr       */
+/*   Updated: 2025/07/04 17:12:16 by ialashqa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,10 @@ void	init_game(t_game *game, t_info *info)
 	load_textures(game);
 	game->shooting_frame = 0;
 	init_player(&game->player, info);
+	mlx_mouse_hide(game->win);
+	mlx_mouse_move(game->win, WIDTH / 2, HEIGHT / 2);
+	mlx_hook(game->win, 4, 0, mouse_press, game);
+	mlx_hook(game->win, 5, 0, mouse_release, game);
 	game->player.game = game;
 }
 

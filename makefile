@@ -20,6 +20,7 @@ endif
 SRCS = \
 	execution/draw.c \
 	execution/init.c \
+	execution/mouse.c \
 	execution/moves.c \
 	execution/player.c \
 	execution/raycast.c \
