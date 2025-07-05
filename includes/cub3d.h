@@ -6,12 +6,12 @@
 /*   By: ialashqa <ialashqa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/12 16:13:59 by ismailalash       #+#    #+#             */
-/*   Updated: 2025/07/04 17:13:22 by ialashqa         ###   ########.fr       */
+/*   Updated: 2025/07/05 11:30:51 by ialashqa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GAME_H
-# define GAME_H
+#ifndef CUB3D_H
+# define CUB3D_H
 
 # define WIDTH 1000
 # define HEIGHT 700
