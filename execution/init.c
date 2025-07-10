@@ -6,7 +6,7 @@
 /*   By: ialashqa <ialashqa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 18:00:59 by ismailalash       #+#    #+#             */
-/*   Updated: 2025/07/05 12:17:34 by ialashqa         ###   ########.fr       */
+/*   Updated: 2025/07/10 18:06:17 by ialashqa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 void	init_game(t_game *game, t_info *info)
 {
+	int i;
+	
 	game->info = info;
 	game->mlx = mlx_init();
 	game->win = mlx_new_window(game->mlx, WIDTH, HEIGHT, "Halo Infinite");
@@ -21,6 +23,20 @@ void	init_game(t_game *game, t_info *info)
 	game->data = mlx_get_data_addr(game->img, &game->bpp, &game->size_line,
 			&game->endian);
 	mlx_put_image_to_window(game->mlx, game->win, game->img, 0, 0);
+	i = 0;
+    while (i < 4)
+    {
+        game->textures[i].img = NULL;
+        i++;
+    }
+    i = 0;
+    while (i <= 5)
+    {
+        game->visors[i].img = NULL;
+        i++;
+    }
+	game->gun_normal.img = NULL;
+    game->gun_shoot.img = NULL;
 	load_textures(game);
 	game->shooting_frame = 0;
 	game->is_shooting = false;
@@ -47,9 +63,10 @@ void	load_wall_textures(t_game *game)
 		game->textures[i].img = mlx_xpm_file_to_image(game->mlx,
 				paths[i], &game->textures[i].width,
 				&game->textures[i].height);
-		if (!game->textures[3].img)
+		if (!game->textures[i].img)
 		{
 			fprintf(stderr, "E: Failed to load texture path:%s\n", paths[i]);
+			close_window(game);
 			exit(EXIT_FAILURE);
 		}
 		game->textures[i].data = mlx_get_data_addr(game->textures[i].img,
@@ -78,10 +95,11 @@ void	load_visor_textures(t_game *game)
 		if (!game->visors[i].img)
 		{
 			fprintf(stderr, "E:Failed to load texture path:%s\n", v_path[i]);
+			close_window(game);
 			exit(EXIT_FAILURE);
 		}
 		game->visors[i].data = mlx_get_data_addr(game->visors[i].img,
-				&game->visors[i].bpp, &game->visors[i].size_line,
+				&game->visors[i].bpp, &game->visors[i].size_line, 
 				&game->visors[i].endian);
 		i++;
 	}
@@ -96,6 +114,7 @@ void	load_gun_textures(t_game *game)
 	if (!game->gun_normal.img)
 	{
 		printf("E: Failed to load texture: rifle.xpm\n");
+		close_window(game);
 		exit(EXIT_FAILURE);
 	}
 	game->gun_normal.data = mlx_get_data_addr(game->gun_normal.img,
@@ -107,6 +126,7 @@ void	load_gun_textures(t_game *game)
 	if (!game->gun_shoot.img)
 	{
 		printf("E: Failed to load texture: rifle_shooting.xpm\n");
+		close_window(game);
 		exit(EXIT_FAILURE);
 	}
 	game->gun_shoot.data = mlx_get_data_addr(game->gun_shoot.img,

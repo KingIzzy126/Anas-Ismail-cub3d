@@ -6,7 +6,7 @@
 /*   By: ialashqa <ialashqa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/13 14:30:00 by ismailalash       #+#    #+#             */
-/*   Updated: 2025/07/04 17:57:19 by ialashqa         ###   ########.fr       */
+/*   Updated: 2025/07/10 19:35:41 by ialashqa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,7 +92,7 @@ void	draw_crosshair(t_game *game)
 
 	mid_x = WIDTH / 2;
 	mid_y = HEIGHT / 2;
-	length = 10;
+	length = 5;
 	color = 0xFF0000;
 	i = -length;
 	while (i <= length)
