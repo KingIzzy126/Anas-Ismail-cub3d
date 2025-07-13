@@ -6,7 +6,7 @@
 /*   By: ialashqa <ialashqa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/12 16:13:59 by ismailalash       #+#    #+#             */
-/*   Updated: 2025/07/10 16:56:38 by ialashqa         ###   ########.fr       */
+/*   Updated: 2025/07/13 20:43:00 by ialashqa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,6 +80,8 @@ typedef struct s_game
 	int					endian;
 	int					current_visor;
 	int					shooting_frame;
+	int					exit_code;
+	bool				should_exit;
 	bool				is_shooting;
 
 	t_texture			gun_normal;
@@ -210,6 +212,10 @@ void					load_textures(t_game *game);
 // mouse.c
 int						mouse_press(int button, int x, int y, t_game *game);
 int						mouse_release(int button, int x, int y, t_game *game);
+void					handle_texture_load_error(const char *texture_path,
+							t_game *game);
+void					init_texture_pointers(t_game *game);
+void					cleanup_textures(t_game *game);
 
 // moves.c
 void					move_up(t_player *player, int speed, float cos_a,

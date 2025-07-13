@@ -1,2 +1,6 @@
 ./cub3d // segfaults but fuixed
 making a file .xpmmmm at the end, segv // unfined
+
+make exit lags
+remove exit failure
+put flags

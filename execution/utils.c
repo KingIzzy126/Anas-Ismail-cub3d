@@ -6,7 +6,7 @@
 /*   By: ialashqa <ialashqa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 18:02:20 by ismailalash       #+#    #+#             */
-/*   Updated: 2025/07/10 19:35:14 by ialashqa         ###   ########.fr       */
+/*   Updated: 2025/07/13 20:34:49 by ialashqa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,30 +72,19 @@ float	distance(t_points *p, t_game *game)
 
 int	close_window(t_game *game)
 {
-	int	i;
+	int	exit_status;
 
-	i = 0;
-	while (i < 4)
-	{
-		if (game->textures[i].img)
-			mlx_destroy_image(game->mlx, game->textures[i].img);
-		i++;
-	}
-	i = 1;
-	while (i <= 5)
-	{
-		if (game->visors[i].img)
-			mlx_destroy_image(game->mlx, game->visors[i].img);
-		i++;
-	}
-	if (game->gun_normal.img)
-		mlx_destroy_image(game->mlx, game->gun_normal.img);
-	if (game->gun_shoot.img)
-		mlx_destroy_image(game->mlx, game->gun_shoot.img);
-	mlx_destroy_image(game->mlx, game->img);
-	mlx_destroy_window(game->mlx, game->win);
+	cleanup_textures(game);
+	if (game->img)
+		mlx_destroy_image(game->mlx, game->img);
+	if (game->win)
+		mlx_destroy_window(game->mlx, game->win);
 	free_info(game->info);
-	exit(EXIT_SUCCESS);
+	if (game->should_exit)
+		exit_status = game->exit_code;
+	else
+		exit_status = EXIT_SUCCESS;
+	exit(exit_status);
 }
 
 size_t	ft_strlen2(const char *str)

@@ -6,7 +6,7 @@
 /*   By: ialashqa <ialashqa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/14 14:41:06 by ismailalash       #+#    #+#             */
-/*   Updated: 2025/07/10 19:36:05 by ialashqa         ###   ########.fr       */
+/*   Updated: 2025/07/11 20:33:54 by ialashqa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@ void	init_player(t_player *player, t_info *info)
 	player->x = (info->x_plr + 0.5) * WALL;
 	player->y = (info->y_plr + 0.5) * WALL;
 	if (info->facing_plr == 'N')
-		player->angle = PI / 2;
-	else if (info->facing_plr == 'S')
 		player->angle = 3 * PI / 2;
+	else if (info->facing_plr == 'S')
+		player->angle = PI / 2;
 	else if (info->facing_plr == 'E')
 		player->angle = 0;
 	else if (info->facing_plr == 'W')
