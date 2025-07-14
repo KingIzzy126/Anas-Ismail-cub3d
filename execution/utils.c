@@ -6,7 +6,7 @@
 /*   By: ialashqa <ialashqa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 18:02:20 by ismailalash       #+#    #+#             */
-/*   Updated: 2025/07/14 13:45:32 by ialashqa         ###   ########.fr       */
+/*   Updated: 2025/07/14 14:13:38 by ialashqa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,8 +72,6 @@ float	distance(t_points *p, t_game *game)
 
 int	close_window(t_game *game)
 {
-	int	exit_status;
-
 	cleanup_textures(game);
 	if (game->img)
 		mlx_destroy_image(game->mlx, game->img);

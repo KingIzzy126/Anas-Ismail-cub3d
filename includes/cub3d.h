@@ -6,7 +6,7 @@
 /*   By: ialashqa <ialashqa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/12 16:13:59 by ismailalash       #+#    #+#             */
-/*   Updated: 2025/07/14 13:46:42 by ialashqa         ###   ########.fr       */
+/*   Updated: 2025/07/14 14:42:53 by ialashqa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@
 # define RIGHT 124
 # define SPACE 49
 # define TRIGGER 1
+# define SHIFT 257
 
 # define PI 3.14159265358979323846
 
@@ -58,6 +59,7 @@ typedef struct s_player
 	float				x;
 	float				y;
 	float				angle;
+	float				stamina; 
 
 	bool				key_up;
 	bool				key_down;
@@ -65,6 +67,7 @@ typedef struct s_player
 	bool				key_right;
 	bool				left_rotate;
 	bool				right_rotate;
+	bool				sprint;
 	t_game				*game;
 }						t_player;
 

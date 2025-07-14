@@ -6,7 +6,7 @@
 /*   By: ialashqa <ialashqa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/14 14:41:06 by ismailalash       #+#    #+#             */
-/*   Updated: 2025/07/11 20:33:54 by ialashqa         ###   ########.fr       */
+/*   Updated: 2025/07/14 14:43:32 by ialashqa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ void	init_player(t_player *player, t_info *info)
 	player->key_right = false;
 	player->left_rotate = false;
 	player->right_rotate = false;
+	player->sprint = false;
 }
 
 int	key_press(int keycode, t_player *player)
@@ -48,6 +49,8 @@ int	key_press(int keycode, t_player *player)
 		player->right_rotate = true;
 	if (keycode == SPACE)
 		player->game->is_shooting = true;
+	if (keycode == SHIFT)
+		player->sprint = true;
 	if (keycode == ESC)
 		close_window(player->game);
 	if (keycode >= 18 && keycode <= 21)
@@ -75,6 +78,8 @@ int	key_release(int keycode, t_player *player)
 		player->right_rotate = false;
 	if (keycode == SPACE)
 		player->game->is_shooting = false;
+	if (keycode == SHIFT)
+		player->sprint = false;
 	return (0);
 }
 
@@ -99,7 +104,10 @@ void	move_player(t_player *player)
 	float	cos_angle;
 	float	sin_angle;
 
-	speed = 3;
+	if (player->sprint)
+		speed = 9;
+	else
+		speed = 3;
 	cos_angle = cos(player->angle);
 	sin_angle = sin(player->angle);
 	rotate_player(player);
