@@ -6,7 +6,7 @@
 /*   By: ialashqa <ialashqa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/04 17:05:21 by ialashqa          #+#    #+#             */
-/*   Updated: 2025/07/14 13:45:02 by ialashqa         ###   ########.fr       */
+/*   Updated: 2025/07/14 14:02:26 by ialashqa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ int	mouse_release(int button, int x, int y, t_game *game)
 void	handle_texture_load_error(const char *texture_path, t_game *game)
 {
 	fprintf(stderr, "E: Failed to load texture path: %s\n", texture_path);
+	game->exit_code = EXIT_FAILURE;
 	close_window(game);
 }
 

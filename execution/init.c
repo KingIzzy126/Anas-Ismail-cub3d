@@ -6,7 +6,7 @@
 /*   By: ialashqa <ialashqa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 18:00:59 by ismailalash       #+#    #+#             */
-/*   Updated: 2025/07/13 20:42:34 by ialashqa         ###   ########.fr       */
+/*   Updated: 2025/07/14 14:00:25 by ialashqa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ void	init_game(t_game *game, t_info *info)
 			&game->endian);
 	mlx_put_image_to_window(game->mlx, game->win, game->img, 0, 0);
 	init_texture_pointers(game);
-	game->should_exit = false;
 	game->exit_code = EXIT_SUCCESS;
 	load_textures(game);
 	game->shooting_frame = 0;
