@@ -6,7 +6,7 @@
 /*   By: ialashqa <ialashqa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/16 16:39:44 by aal-hawa          #+#    #+#             */
-/*   Updated: 2025/07/04 12:49:11 by ialashqa         ###   ########.fr       */
+/*   Updated: 2025/07/14 13:48:15 by ialashqa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,8 @@ void	init_info(t_info *info)
 
 void	free_info(t_info *info)
 {
+	int	i;
+
 	if (info->map)
 		free_array2d(&info->map);
 	if (info->east_path)
@@ -55,6 +57,16 @@ void	free_info(t_info *info)
 		info->north_path = free_string(info->north_path);
 	if (info->south_path)
 		info->south_path = free_string(info->south_path);
+	if (info->map)
+	{
+		i = 0;
+		while (info->map[i])
+		{
+			free(info->map[i]);
+			i++;
+		}
+		free(info->map);
+	}
 }
 
 void	check_extension(char *name_map, t_info *info)
@@ -86,7 +98,7 @@ int	open_map_fd(char *name_map, t_info *info)
 	if (info->is_hv_err == 1)
 	{
 		if (info->fd > 0)
-			close (info->fd);
+			close(info->fd);
 		exit(1);
 	}
 	fd = open(name_map, O_RDONLY);

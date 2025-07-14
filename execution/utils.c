@@ -6,7 +6,7 @@
 /*   By: ialashqa <ialashqa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 18:02:20 by ismailalash       #+#    #+#             */
-/*   Updated: 2025/07/13 20:34:49 by ialashqa         ###   ########.fr       */
+/*   Updated: 2025/07/14 13:45:32 by ialashqa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,12 +79,9 @@ int	close_window(t_game *game)
 		mlx_destroy_image(game->mlx, game->img);
 	if (game->win)
 		mlx_destroy_window(game->mlx, game->win);
-	free_info(game->info);
-	if (game->should_exit)
-		exit_status = game->exit_code;
-	else
-		exit_status = EXIT_SUCCESS;
-	exit(exit_status);
+	if (game->info)
+		free_info(game->info);
+	exit(game->exit_code);
 }
 
 size_t	ft_strlen2(const char *str)

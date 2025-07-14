@@ -6,7 +6,7 @@
 /*   By: ialashqa <ialashqa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/12 16:13:59 by ismailalash       #+#    #+#             */
-/*   Updated: 2025/07/13 20:43:00 by ialashqa         ###   ########.fr       */
+/*   Updated: 2025/07/14 13:46:42 by ialashqa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,6 @@ typedef struct s_game
 	int					current_visor;
 	int					shooting_frame;
 	int					exit_code;
-	bool				should_exit;
 	bool				is_shooting;
 
 	t_texture			gun_normal;
