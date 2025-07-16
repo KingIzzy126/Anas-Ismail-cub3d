@@ -6,7 +6,7 @@
 /*   By: ialashqa <ialashqa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/12 16:13:59 by ismailalash       #+#    #+#             */
-/*   Updated: 2025/07/16 13:52:29 by ialashqa         ###   ########.fr       */
+/*   Updated: 2025/07/16 20:22:15 by ialashqa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ typedef struct s_player
 	float				x;
 	float				y;
 	float				angle;
-	float				stamina; 
+	float				stamina;
 
 	bool				key_up;
 	bool				key_down;

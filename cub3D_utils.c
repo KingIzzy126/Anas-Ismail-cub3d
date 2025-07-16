@@ -6,7 +6,7 @@
 /*   By: ialashqa <ialashqa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/16 16:39:44 by aal-hawa          #+#    #+#             */
-/*   Updated: 2025/07/16 13:52:23 by ialashqa         ###   ########.fr       */
+/*   Updated: 2025/07/16 20:21:46 by ialashqa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,7 @@ void	init_info(t_info *info)
 	info->x_lngth_mp = -1;
 	info->y_lngth_mp = 0;
 	info->is_f_m_l = 0;
-	// info->sz = 50;
 	info->is_hv_err = 0;
-	// info->steps = 0;
-	// info->ofset = 0;
 	info->fd = -2;
 	info->number_of_elemnts = 0;
 	info->map = NULL;
