@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   map_parsing.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ismailalashqar <ismailalashqar@student.    +#+  +:+       +#+        */
+/*   By: ialashqa <ialashqa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 17:16:56 by aal-hawa          #+#    #+#             */
-/*   Updated: 2025/06/16 16:55:03 by ismailalash      ###   ########.fr       */
+/*   Updated: 2025/07/16 13:52:15 by ialashqa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,7 +89,7 @@ int	fill_header_map_data(int fd, t_info *info)
 			header_parsing(&test_line_map, info);
 		else if (info->is_hv_err != 1)
 		{
-			if (info->x_lngth_mp == -1 && !test_line_map[0])
+			if (info->x_lngth_mp == -1 &&  !test_line_map[0])
 				continue ;
 			info->map = add_in_array2d(&info->map, test_line_map);
 			info->y_lngth_mp++;

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ismailalashqar <ismailalashqar@student.    +#+  +:+       +#+        */
+/*   By: ialashqa <ialashqa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/14 18:01:55 by aal-hawa          #+#    #+#             */
-/*   Updated: 2025/06/16 16:55:24 by ismailalash      ###   ########.fr       */
+/*   Updated: 2025/07/16 13:36:35 by ialashqa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

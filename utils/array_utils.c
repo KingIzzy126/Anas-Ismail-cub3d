@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   array_utils.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ismailalashqar <ismailalashqar@student.    +#+  +:+       +#+        */
+/*   By: ialashqa <ialashqa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/16 17:33:40 by aal-hawa          #+#    #+#             */
-/*   Updated: 2025/06/16 16:55:11 by ismailalash      ###   ########.fr       */
+/*   Updated: 2025/07/16 13:36:28 by ialashqa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

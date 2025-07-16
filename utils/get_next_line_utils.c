@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ismailalashqar <ismailalashqar@student.    +#+  +:+       +#+        */
+/*   By: ialashqa <ialashqa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 16:08:25 by aal-hawa          #+#    #+#             */
-/*   Updated: 2025/06/16 16:55:41 by ismailalash      ###   ########.fr       */
+/*   Updated: 2025/07/16 13:36:50 by ialashqa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

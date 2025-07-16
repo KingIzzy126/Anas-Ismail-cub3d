@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ismailalashqar <ismailalashqar@student.    +#+  +:+       +#+        */
+/*   By: ialashqa <ialashqa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/16 17:43:23 by aal-hawa          #+#    #+#             */
-/*   Updated: 2025/06/16 16:55:39 by ismailalash      ###   ########.fr       */
+/*   Updated: 2025/07/16 13:36:48 by ialashqa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

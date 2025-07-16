@@ -6,7 +6,7 @@
 /*   By: ialashqa <ialashqa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/12 16:13:59 by ismailalash       #+#    #+#             */
-/*   Updated: 2025/07/14 14:42:53 by ialashqa         ###   ########.fr       */
+/*   Updated: 2025/07/16 13:52:29 by ialashqa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -154,48 +154,48 @@ typedef struct s_points
 
 typedef struct s_color_rgb
 {
-	int					r;
-	int					g;
-	int					b;
-}						t_color_rgb;
+	int			r;
+	int			g;
+	int			b;
+}				t_color_rgb;
 
 typedef struct s_info
 {
-	int					is_hv_plr;
-	int					is_arnd_wall;
-	int					x_lngth_mp;
-	int					y_lngth_mp;
-	int					is_f_m_l;
-	int					sz;
-	void				*mlx;
-	void				*win;
-	void				*img;
-	int					x_plr;
-	int					y_plr;
-	char				facing_plr;
-	void				*img_plr;
-	char				**map;
-	void				*img_wl;
-	void				*img_wlk;
-	int					is_hv_err;
-	int					fd;
-	int					steps;
-	int					ofset;
-	int					is_plus;
-	int					number_of_elemnts;
-	char				*north_path;
-	char				*south_path;
-	char				*west_path;
-	char				*east_path;
-	t_color_rgb			floor_color;
-	t_color_rgb			ceiling_color;
-}						t_info;
+	int			is_hv_plr;
+	int			is_arnd_wall;
+	int			x_lngth_mp;
+	int			y_lngth_mp;
+	int			is_f_m_l;
+	// int			sz;
+	// void		*mlx;
+	// void		*win;
+	// void		*img;
+	int			x_plr;
+	int			y_plr;
+	char		facing_plr;
+	// void		*img_plr;
+	char		**map;
+	// void		*img_wl;
+	// void		*img_wlk;
+	int			is_hv_err;
+	int			fd;
+	// int			steps;
+	// int			ofset;
+	// int			is_plus;
+	int			number_of_elemnts;
+	char		*north_path;
+	char		*south_path;
+	char		*west_path;
+	char		*east_path;
+	t_color_rgb	floor_color;
+	t_color_rgb	ceiling_color;
+}				t_info;
 
 typedef struct s_point
 {
-	int					x;
-	int					y;
-}						t_point;
+	int			x;
+	int			y;
+}				t_point;
 
 // draw.c
 void					put_pixel(int x, int y, int color, t_game *game);

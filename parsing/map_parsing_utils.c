@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   map_parsing_utils.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ismailalashqar <ismailalashqar@student.    +#+  +:+       +#+        */
+/*   By: ialashqa <ialashqa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 19:07:17 by aal-hawa          #+#    #+#             */
-/*   Updated: 2025/06/16 16:55:00 by ismailalash      ###   ########.fr       */
+/*   Updated: 2025/07/16 13:52:00 by ialashqa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

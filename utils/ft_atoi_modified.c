@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi_modified.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ismailalashqar <ismailalashqar@student.    +#+  +:+       +#+        */
+/*   By: ialashqa <ialashqa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/16 17:51:48 by aal-hawa          #+#    #+#             */
-/*   Updated: 2025/06/16 16:55:15 by ismailalash      ###   ########.fr       */
+/*   Updated: 2025/07/16 13:36:33 by ialashqa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   path_identifier.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ismailalashqar <ismailalashqar@student.    +#+  +:+       +#+        */
+/*   By: ialashqa <ialashqa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/16 20:29:42 by aal-hawa          #+#    #+#             */
-/*   Updated: 2025/06/16 16:55:05 by ismailalash      ###   ########.fr       */
+/*   Updated: 2025/07/16 13:35:47 by ialashqa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

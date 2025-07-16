@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check_valid_comma_colors.c                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ismailalashqar <ismailalashqar@student.    +#+  +:+       +#+        */
+/*   By: ialashqa <ialashqa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/16 20:32:29 by aal-hawa          #+#    #+#             */
-/*   Updated: 2025/06/16 16:54:51 by ismailalash      ###   ########.fr       */
+/*   Updated: 2025/07/16 13:35:29 by ialashqa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
